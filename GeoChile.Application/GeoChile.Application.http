@@ -1,0 +1,6 @@
+@GeoChile.Application_HostAddress = http://localhost:5135
+
+GET {{GeoChile.Application_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

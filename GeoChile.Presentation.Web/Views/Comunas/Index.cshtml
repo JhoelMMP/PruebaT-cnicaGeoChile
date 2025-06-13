@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GeoChile.Presentation.Web.Models.ComunaViewModel>
+@{
+    ViewData["Title"] = "Listado de Comunas";
+    var idRegion = ViewBag.IdRegion;
+}
+
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Listado de Comunas</h2>
+        <a asp-controller="Region" asp-action="Index" class="btn btn-secondary">← Volver a Regiones</a>
+    </div>
+
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Información Adicional (XML)</th>
+                <th style="width: 10%;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var comuna in Model)
+            {
+                <tr>
+                    <td>@comuna.IdComuna</td>
+                    <td>@comuna.Nombre</td>
+                    <td>
+                        <pre><code class="language-xml">@comuna.InformacionAdicional</code></pre>
+                    </td>
+                    <td class="text-center">
+                        @* Este enlace lleva al formulario para modificar la comuna *@
+                        <a asp-action="Editar" asp-route-idRegion="@comuna.IdRegion"
+                           asp-route-idComuna="@comuna.IdComuna" class="btn btn-sm btn-warning">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
