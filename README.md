@@ -72,7 +72,8 @@ cd NOMBRE-DE-LA-CARPETA
     * **Usuario:** `sa`
     * **Contraseña:** La que elegiste en el paso anterior.
 
-4.  Ejecuta los script SQL que se encuentran en la carpeta para crear la base de datos, las tablas y los procedimientos almacenados necesarios.
+4.  Ejecuta los script SQL que se encuentran en el proyecto GeoChile.Application/Scripts para crear la base de datos, las tablas y los procedimientos almacenados necesarios.
+   
 ### Paso 3: Configurar las Aplicaciones
 Abre la solución (.sln) con Visual Studio y configura los siguientes archivos:
 
